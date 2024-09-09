@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:spring_edge_flutter_assignment/constants/constants.dart';
@@ -22,85 +21,105 @@ class LoginPage extends StatelessWidget {
         width: double.maxFinite,
         padding: const EdgeInsets.all(20),
         decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(backgroundImage), fit: BoxFit.fitWidth)),
-        child: Row(
-          children: [
-            //Left-side-image
-            SizedBox(
-              width: screenWidth! * 0.4,
-              child: Stack(
-                children: [
-                  Image.asset(boatImage),
-                  Align(
-                    alignment: Alignment.bottomLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Text(
-                        'Explore Demo Limited\'s Premier Logistics\nand Freight Services',
-                        style: GoogleFonts.publicSans(
+          image: DecorationImage(
+            image: AssetImage(backgroundImage),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: SingleChildScrollView(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              //Left-side-image
+              SizedBox(
+                width: screenWidth! * 0.4,
+                height: screenHeight! * 0.95,
+                child: Stack(
+                  children: [
+                    Image.asset(
+                      boatImage,
+                      fit: BoxFit.fitHeight,
+                    ),
+                    Positioned(
+                      bottom: 0,
+                      child: Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Text(
+                          'Explore Demo Limited\'s Premier Logistics\nand Freight Services',
+                          style: GoogleFonts.publicSans(
                             color: Colors.white,
                             fontSize: 23,
-                            fontWeight: FontWeight.w700),
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
                       ),
                     ),
-                  )
-                ],
+                  ],
+                ),
               ),
-            ),
 
-            Expanded(
-                child: Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  //App-logo&name
-                  Row(
+              Expanded(
+                child: SizedBox(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Image.asset(logoImage),
-                      const SizedBox(
-                        width: 10,
+                      //App-logo & name
+                      Padding(
+                        padding: const EdgeInsets.only(left: 190),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          
+                          children: [
+                            Image.asset(logoImage),
+                            const SizedBox(width: 10),
+                            GradientText(
+                              text: 'DEMO',
+                              style: GoogleFonts.righteous(
+                                fontSize: 25,
+                                fontWeight: FontWeight.w400,
+                              ),
+                              gradient: const LinearGradient(
+                                colors: [
+                                  Color(0xff35A6D6),
+                                  Color(0xff435B83),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                      GradientText(
-                          text: 'DEMO',
-                          style: GoogleFonts.righteous(
-                            fontSize: 25,
-                            fontWeight: FontWeight.w400,
+
+                      const SizedBox(height: 30),
+
+                      //Login-container
+                      const LoginContainer(),
+
+                      const SizedBox(height: 30),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                            Icons.copyright_rounded,
+                            color: Color(0xff666666),
                           ),
-                          gradient: const LinearGradient(
-                              colors: [Color(0xff35A6D6), Color(0xff435B83)]))
-                    ],
-                  ),
-
-                  const SizedBox(
-                    height: 30,
-                  ),
-
-                  //Login-container
-                  const LoginContainer(),
-                  const Spacer(),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Icon(
-                        Icons.copyright_rounded,
-                        color: Color(0xff666666),
+                          Text(
+                            '2024 DEMO GROUP. All Rights Reserved',
+                            style: GoogleFonts.inter(
+                              fontWeight: FontWeight.w400,
+                              color: const Color(0xff666666),
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
                       ),
-                      Text(
-                        '2024 DEMO GROUP. All Rights Reserved',
-                        style: GoogleFonts.inter(
-                            fontWeight: FontWeight.w400,
-                            color: const Color(0xff666666),
-                            fontSize: 14),
-                      )
                     ],
-                  )
-                ],
+                  ),
+                ),
               ),
-            ))
-          ],
+            ],
+          ),
         ),
       ),
     );
