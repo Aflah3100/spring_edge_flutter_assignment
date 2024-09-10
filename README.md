@@ -24,5 +24,5 @@ To run the project:
 ### Web View 
 <img src="screenshots/webview.png" alt="Signup Screen" />
 
-### Moobile View 
+### Mobile View 
 <img src="screenshots/mobile_view.png" alt="Login Screen" width="300"/>
