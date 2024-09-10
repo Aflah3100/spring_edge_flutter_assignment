@@ -1,16 +1,28 @@
 # spring_edge_flutter_assignment
 
-A new Flutter project.
+Sample webpage build using flutter. 
 
-## Getting Started
+## Setup
 
-This project is a starting point for a Flutter application.
+To run the project:
 
-A few resources to get you started if this is your first Flutter project:
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Aflah3100/spring_edge_flutter_assignment.git
+   cd shoe_mart
+   
+2. **Install dependencies**:
+   ```bash
+   flutter pub get
+   
+3. **Run the Application**:
+   ```bash
+   flutter run
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Screenshots
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Web View 
+<img src="screenshots/webview.png" alt="Signup Screen" />
+
+### Moobile View 
+<img src="screenshots/mobile_view.png" alt="Login Screen" width="300"/>
